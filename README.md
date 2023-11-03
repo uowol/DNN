@@ -21,3 +21,18 @@ ToyProject-DNN
 ## Todo List
 - XOR 문제의 해결
 - 유방암 데이터에 대한 악성 종양 분류 문제의 해결
+
+# Data Collection
+## XOR
+
+## 유방암 데이터
+
+# Modeling
+## XOR
+
+## 악성 종양의 이진 분류 모델
+
+# Inference
+## Train/Test Result
+
+## Result
