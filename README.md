@@ -24,13 +24,76 @@ ToyProject-DNN
 
 # Data Collection
 ## XOR
+|X1|X2|Y|
+|:--:|:--:|:--:|
+|0|0|0|
+|1|0|1|
+|0|1|1|
+|1|1|0|
 
 ## 유방암 데이터
+유방암 데이터는 sklearn에서 제공하는 데이터를 활용하였다.
+```py
+import pandas as pd 
+from sklearn.datasets import load_breast_cancer
+
+breast = load_breast_cancer()
+df = pd.DataFrame(breast.data, columns=breast.feature_names)  # 독립변수 Xs
+df['y'] = breast.target                                       # 종속변수 Y
+```
+
+```txt
+RangeIndex: 569 entries, 0 to 568
+Data columns (total 31 columns):
+ #   Column                   Non-Null Count  Dtype  
+---  ------                   --------------  -----  
+ 0   mean radius              569 non-null    float64
+ 1   mean texture             569 non-null    float64
+ 2   mean perimeter           569 non-null    float64
+ 3   mean area                569 non-null    float64
+ 4   mean smoothness          569 non-null    float64
+ 5   mean compactness         569 non-null    float64
+ 6   mean concavity           569 non-null    float64
+ 7   mean concave points      569 non-null    float64
+ 8   mean symmetry            569 non-null    float64
+ 9   mean fractal dimension   569 non-null    float64
+ 10  radius error             569 non-null    float64
+ 11  texture error            569 non-null    float64
+ 12  perimeter error          569 non-null    float64
+ 13  area error               569 non-null    float64
+ 14  smoothness error         569 non-null    float64
+ 15  compactness error        569 non-null    float64
+ 16  concavity error          569 non-null    float64
+ 17  concave points error     569 non-null    float64
+ 18  symmetry error           569 non-null    float64
+ 19  fractal dimension error  569 non-null    float64
+ 20  worst radius             569 non-null    float64
+ 21  worst texture            569 non-null    float64
+ 22  worst perimeter          569 non-null    float64
+ 23  worst area               569 non-null    float64
+ 24  worst smoothness         569 non-null    float64
+ 25  worst compactness        569 non-null    float64
+ 26  worst concavity          569 non-null    float64
+ 27  worst concave points     569 non-null    float64
+ 28  worst symmetry           569 non-null    float64
+ 29  worst fractal dimension  569 non-null    float64
+ 30  y                        569 non-null    int32  
+dtypes: float64(30), int32(1)
+memory usage: 135.7 KB
+```
 
 # Modeling
 ## XOR
+### Main Focus
+- batch_size, epoch, learning_rate 하이퍼 파라미터에 따른 변화를 보이기
+  - 가중치 시각화
+  - 성능 그래프
 
 ## 악성 종양의 이진 분류 모델
+### Main Focus
+- 30개의 많은 변수를 어떻게 활용할 것인가
+  - 다중공선성 확인
+  - 차원축소
 
 # Inference
 ## Train/Test Result
